@@ -1,5 +1,11 @@
-export default function Header() {
-  function switchLanguage(languageSelected) {}
+import { useContext } from "react";
+import LanguageContext from "../contexts/LanguageContext";
+
+export default function HeaderPage() {
+  const { setLanguage } = useContext(LanguageContext);
+  function switchLanguage(languageSelected) {
+    setLanguage(languageSelected.toLowerCase());
+  }
   return (
     <>
       <header>
